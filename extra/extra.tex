@@ -1,0 +1,36 @@
+\ifx\allfiles\undefined
+\documentclass[12pt, a4paper, oneside, UTF8]{ctexbook}
+\setCJKmainfont{SimSun}
+\def\path{../config}
+\input{../config/_config}
+\begin{document}
+	% \input{../config/cover}
+	\else
+	\fi
+	%标题
+	\chapter{附录}
+	这一部分中，对于正文中因为逻辑结构无法提及的部分，进行补充。包括特殊函数，有趣的数学概念，一些命题的全新解法，以及难以推导的公式
+	证明可能使用复分析、实分析、泛函等超纲内容
+	%--------------------正文---------------------------
+	
+	
+	%附录：不定积分初等性判定
+	\section{原函数初等性的判定方法}
+		\subsection{切比雪夫定理}
+			\begin{them}{切比雪夫定理}{}
+				设$m,n,p\in \Q-\{0\}$，那么以下积分
+				\begin{equation}
+					\int x^m(a+bx^n)^p \d x
+				\end{equation}
+				初等的充要条件是：$p,\frac{m+1}{n},\frac{m+1}{n}+p$中至少有一个为整数
+			\end{them}
+		\subsection{刘维尔定理}
+	
+	%附录：超越积分的特殊解法
+	\section{一些超越积分的特殊解法}
+		\subsection{Direchlet积分}
+		
+	
+	\ifx\allfiles\undefined
+\end{document}
+\fi

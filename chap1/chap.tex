@@ -1,0 +1,61 @@
+\ifx\allfiles\undefined
+\documentclass[12pt, a4paper, oneside, UTF8]{ctexbook}
+\def\path{../config}
+\input{../config/_config}
+\begin{document}
+% \input{../config/cover}
+\else
+\fi
+%标题
+\chapter{微分学}
+	我们首先复习微分学中的重要概念和定理
+	\section{Taylor公式}
+		\begin{them}{Taylor公式}{}
+			设函数$f:(c,d) \rightarrow \R$，$f \in C^{(n)} (c,d)$，$a,b$是$(c,d)$的内点。
+			
+			那么$\exists \theta \in (a,b),$使得：
+			
+			$f(b) = \sum\limits_{i=0}^{n-1} \frac{f^{(i)}(a)}{i!} (b-a)^i+\frac{f^{(n)}(\theta)}{n!} (b-a)^n$
+		\end{them}
+		于是立即有以下推论：
+		\begin{corollary}{拉格朗日中值定理}{}
+			设函数$f:(c,d) \rightarrow \R$，$f$可导，$a,b$是$(c,d)$的内点。
+			
+			那么$\exists \theta \in (a,b)$，使得：
+			
+			$f(b)-f(a) = f^{\prime} (\theta) (b-a)$
+		\end{corollary}
+		\begin{corollary}{}{}
+			设函数$f:(c,d) \rightarrow \R$，$f$2阶可导，$a,b$是$(c,d)$的内点。
+			
+			那么$\exists \theta \in (a,b)$，使得：
+			
+			$f(b)= f(a) + f^{\prime}(a)(b-a) + \frac{1}{2}f^{\prime\prime} (\theta) (b-a)^2$
+		\end{corollary}
+		接下来讨论Taylor公式的积分余项。
+		\begin{them}{带有累次积分余项的Taylor公式}{}
+			设函数$f:(c,d) \rightarrow \R$，$f \in C^{(n)} (c,d)$，$a,b$是$(c,d)$的内点。
+			
+			那么$\exists \theta \in (a,b),$使得：
+			
+			$f(b) = \sum\limits_{i=0}^{n-1} \frac{f^{(i)}(a)}{i!} (b-a)^i+\int_{a}^{b} \d s_1 \int_{a}^{s_1} \cdots \d s_{n-1}\int_{a}^{s_{n-1}} f^{(n)} (s_n) \d s_n$
+		\end{them}
+		\begin{proof}
+			为了凑出累次积分，我们考虑利用N-L公式。
+			
+			$f(b) = f(a) + \int_{a}^{b} f^{\prime} (s_1) \d s_1$
+			
+			但是类似地，我们也知道，$f^{\prime} (s_1) = f^{\prime} (a) + \int_{a}^{s_1} f^{\prime\prime} (s_2) \d s_2$
+			
+			所以有$f(b)=f(a) + \int_{a}^{b} f^{\prime} (s_1) \d s_1$
+			
+			$=f(a) + \int_{a}^{b} \left(f^{\prime} (a) + \int_{a}^{s_1} f^{\prime\prime} (s_2) \d s_2\right) \d s_1$
+			
+			
+		\end{proof}
+	\section{可测集和Lebesgue测度}
+	\section{可测函数}
+
+\ifx\allfiles\undefined
+\end{document}
+\fi
