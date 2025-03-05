@@ -6,19 +6,27 @@
     "Session": {
         "Bookmarks": [
         ],
-        "CurrentFile": "main.tex",
+        "CurrentFile": "chap1/chap.tex",
         "FileVersion": 1,
         "Files": [
             {
-                "Col": 14,
+                "Col": 7,
                 "EditorGroup": 0,
                 "FileName": "main.tex",
                 "FirstLine": 0,
                 "FoldedLines": "",
-                "Line": 12
+                "Line": 5
+            },
+            {
+                "Col": 0,
+                "EditorGroup": 0,
+                "FileName": "chap1/chap.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 0
             }
         ],
         "MasterFile": "",
-        "VerticalSplit": true
+        "VerticalSplit": false
     }
 }
