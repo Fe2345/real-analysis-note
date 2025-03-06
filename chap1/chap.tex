@@ -17,82 +17,104 @@
 	我们提出一些最为基础的想法：如果可以用一系列“盒子”覆盖一个集合，我们可以主观地认为，这个集合的体积小于这个“复合盒子”的大小。
 	如果取这些大小的下确界，我们就可以将其视为这个集合的体积。因此我们提出外测度的概念。
 		\subsection{区间的体积}
-		首先我们先考察区间的体积如何定义。我们将在后续看到，为何不在此直接定义出区间的外测度。
-		
-		先给出区间（矩形）、正方体的定义
-		\begin{defn}{区间、正方体}{}
-			集合$[a,b]=[a_1,b_1] \times \cdots [a_n,b_n] \subset \R^n,a_i \leqslant b_i,a=(a_1,\cdots,a_n)\in\R^n,b=(b_1,\cdots,b_n)\in\R^n$称为以$a,b$为端点的一个闭区间；
+			首先我们先考察区间的体积如何定义。我们将在后续看到，为何不在此直接定义出区间的外测度。
 			
-			集合$(a,b)=(a_1,b_1) \times \cdots (a_n,b_n) \subset \R^n,a=(a_1,\cdots,a_n)\in\R^n,b=(b_1,\cdots,b_n)\in\R^n$称为以$a,b$为端点的一个闭区间；
-			
-			如果$[a,b]$有$\forall i \in \{1,\cdots,n\},b_i-a_i$为定值，那么称$[a,b]$为一个正方体；
-			
-			如果$(a,b)$有$\forall i \in \{1,\cdots,n\},b_i-a_i$为定值，那么称$(a,b)$为一个正方体；
-			
-			闭区间和开区间统称为区间（也称为矩形）。
-			
-			并规定：如果两个区间$A,B$仅在其边界$\partial A,\partial B$上有公共点，即$(A \cap B )\subseteq (\partial A \cap \partial B)$，那么称这两个区间几乎不相交。
-		\end{defn}
-		接下来，我们给出闭区间的体积的定义
-		\begin{defn}{闭区间的体积}
-			我们定义闭区间$R = [a,b]$的体积
-			
-			$|R| = \prod\limits_{i=1}^{n} (b_i-a_i)$
-		\end{defn}
-		\subsection{外测度的定义}
-		于是可以给出外侧度的定义：
-		\begin{defn}{外侧度}{}
-			设集合$E \subseteq \R^n$，集合族$\{Q_i\}$覆盖$E$，即$E \subseteq \bigcup\limits_{i=1}^{\infty} Q_i$
-			
-			我们定义：
-			
-			$m_*(E) = inf \sum\limits_{i=1}^{\infty} |Q_i|$，称为$E$的外侧度
-		\end{defn}
-		在考察外测度性质前，我们先证明几个引理，并考察几个比较平凡的集合的外测度。
-		\begin{lemma}{闭区间体积的有限可加性}{}
-			设集合$R$是有限个几乎不相交的闭区间的并，即$R = \bigcup\limits_{i=1}^{n} R_i$
-			
-			那么有：$|R| = \sum\limits_{i=1}^{n} |R_i|$
-		\end{lemma}
-		\begin{proof}
-			延展这些区间$R_i$，一定会产生一系列网格，以及${1,\cdots,M}$的一个分割$J_1,\cdots,J_N$，使得
-			
-			$R = \bigcup_{j=1}^{M} \tilde{R_j},R_k = \bigcup_{j \in J_k} \tilde{R_j}$，并且$\tilde{R_j}$几乎不相交
-			
-			实际上，数字$1,\cdots,M$正标明了这些方格中包含$R$的那些方格，$J_k$正是包含了$R_k$的那些序号的集合.
-			
-			显然，一定有$|R|=\sum\limits_{j=1}^{M} |\tilde{R_j}|$，于是有
-			
-			$|R| = \sum\limits_{j=1}^{M} |\tilde{R_j}| = \sum\limits_{k=1}^{n} \left(\sum\limits_{j \in J_k} |\tilde{R_j}|\right)$
-			
-			$=\sum\limits_{k=1}^{n} |R_k|$，因为每一个小区间$R_k$也是一系列区间的并
-		\end{proof}
-		那么我们如果取消上面的几乎不相交的条件，那么重复这个过程就可以得到这个结论：
-		\begin{corollary}{}{}
-			设集合$R$包含于有限个闭区间的并，即$R  \subseteq \bigcup\limits_{i=1}^{n} R_i$
-			
-			那么有：$|R| \leqslant \sum\limits_{i=1}^{n} |R_i|$
-		\end{corollary}
-		\begin{them}{}{}
-			$\R$的任意一个开子集$O$都可以唯一地写成可数个不相交开区间的并
-		\end{them}
-		\begin{proof}
-			取$x \in O$，接下来，取
-			
-			$a_x = inf \{a| a<x,(a,x) \subseteq O\},b_x = sup \{b|b>x,(x,b) \subseteq O\}$
-			
-			于是，$I_x = (a_x,b_x)$是包含$x$的最大的$O$的子区间，因此有
-			
-			$O = \bigcup_{x \in O} I_x$
-			
-			我们接下来证明唯一性。只需要证明，不同的这些$I_x$不相交即可。
-			
-			取$I_x,I_y$，假设$I_x \cap I_y \neq \varnothing$，那么又因为$I_x,I_y$分别是包含$x,y$的最大子区间，于是一定有
-			
-			$(I_x \cap I_y) \subseteq I_x,(I_y \cap I_x) \subseteq I_y \Leftrightarrow I_x = I_y$，这样这一部分就证明完毕了。
-			
-			接下来证明这些区间的数量可数。由有理数的性质我们知道，每个区间至少包含一个有理数，又因为$\Q$可数，这些区间的数量自然也是可数的。
-		\end{proof}
+			先给出区间（矩形）、正方体的定义
+			\begin{defn}{区间、正方体}{}
+				集合$[a,b]=[a_1,b_1] \times \cdots [a_n,b_n] \subset \R^n,a_i \leqslant b_i,a=(a_1,\cdots,a_n)\in\R^n,b=(b_1,\cdots,b_n)\in\R^n$称为以$a,b$为端点的一个闭区间；
+				
+				集合$(a,b)=(a_1,b_1) \times \cdots (a_n,b_n) \subset \R^n,a=(a_1,\cdots,a_n)\in\R^n,b=(b_1,\cdots,b_n)\in\R^n$称为以$a,b$为端点的一个闭区间；
+				
+				如果$[a,b]$有$\forall i \in \{1,\cdots,n\},b_i-a_i$为定值，那么称$[a,b]$为一个正方体；
+				
+				如果$(a,b)$有$\forall i \in \{1,\cdots,n\},b_i-a_i$为定值，那么称$(a,b)$为一个正方体；
+				
+				闭区间和开区间统称为区间（也称为矩形）。
+				
+				并规定：如果两个区间$A,B$仅在其边界$\partial A,\partial B$上有公共点，即$(A \cap B )\subseteq (\partial A \cap \partial B)$，那么称这两个区间几乎不相交。
+			\end{defn}
+			接下来，我们给出闭区间的体积的定义
+			\begin{defn}{闭区间的体积}
+				我们定义闭区间$R = [a,b]$的体积
+				
+				$|R| = \prod\limits_{i=1}^{n} (b_i-a_i)$
+			\end{defn}
+			\subsection{外测度的定义}
+			于是可以给出外侧度的定义：
+			\begin{defn}{外侧度}{}
+				设集合$E \subseteq \R^n$，集合族$\{Q_i\}$覆盖$E$，即$E \subseteq \bigcup\limits_{i=1}^{\infty} Q_i$
+				
+				我们定义：
+				
+				$m_*(E) = inf \sum\limits_{i=1}^{\infty} |Q_i|$，称为$E$的外侧度
+			\end{defn}
+			在考察外测度性质前，我们先证明几个引理，并考察几个比较平凡的集合的外测度。
+			\begin{lemma}{闭区间体积的有限可加性}{}
+				设集合$R$是有限个几乎不相交的闭区间的并，即$R = \bigcup\limits_{i=1}^{n} R_i$
+				
+				那么有：$|R| = \sum\limits_{i=1}^{n} |R_i|$
+			\end{lemma}
+			\begin{proof}
+				延展这些区间$R_i$，一定会产生一系列网格，以及${1,\cdots,M}$的一个分割$J_1,\cdots,J_N$，使得
+				
+				$R = \bigcup_{j=1}^{M} \tilde{R_j},R_k = \bigcup_{j \in J_k} \tilde{R_j}$，并且$\tilde{R_j}$几乎不相交
+				
+				实际上，数字$1,\cdots,M$正标明了这些方格中包含$R$的那些方格，$J_k$正是包含了$R_k$的那些序号的集合.
+				
+				显然，一定有$|R|=\sum\limits_{j=1}^{M} |\tilde{R_j}|$，于是有
+				
+				$|R| = \sum\limits_{j=1}^{M} |\tilde{R_j}| = \sum\limits_{k=1}^{n} \left(\sum\limits_{j \in J_k} |\tilde{R_j}|\right)$
+				
+				$=\sum\limits_{k=1}^{n} |R_k|$，因为每一个小区间$R_k$也是一系列区间的并
+			\end{proof}
+			那么我们如果取消上面的几乎不相交的条件，那么重复这个过程就可以得到这个结论：
+			\begin{corollary}{}{}
+				设集合$R$包含于有限个闭区间的并，即$R  \subseteq \bigcup\limits_{i=1}^{n} R_i$
+				
+				那么有：$|R| \leqslant \sum\limits_{i=1}^{n} |R_i|$
+			\end{corollary}
+			我们接下来转向不规则集合的外测度
+			\begin{them}{}{}
+				$\R$的任意一个开子集$O$都可以唯一地写成可数个不相交开区间的并
+			\end{them}
+			\begin{proof}
+				取$x \in O$，接下来，取
+				
+				$a_x = inf \{a| a<x,(a,x) \subseteq O\},b_x = sup \{b|b>x,(x,b) \subseteq O\}$
+				
+				于是，$I_x = (a_x,b_x)$是包含$x$的最大的$O$的子区间，因此有
+				
+				$O = \bigcup_{x \in O} I_x$
+				
+				我们接下来证明唯一性。只需要证明，不同的这些$I_x$不相交即可。
+				
+				取$I_x,I_y$，假设$I_x \cap I_y \neq \varnothing$，那么又因为$I_x,I_y$分别是包含$x,y$的最大子区间，于是一定有
+				
+				$(I_x \cap I_y) \subseteq I_x,(I_y \cap I_x) \subseteq I_y \Leftrightarrow I_x = I_y$，这样这一部分就证明完毕了。
+				
+				接下来证明这些区间的数量可数。由有理数的性质我们知道，每个区间至少包含一个有理数，又因为$\Q$可数，这些区间的数量自然也是可数的。
+			\end{proof}
+			我们尝试将这个结果推广到$\R^d$
+			\begin{them}{}{}
+				$R^d$中的每个开子集$O$都可以唯一地写成可数个几乎不相交的闭区间的并
+			\end{them}
+			\begin{proof}
+				我们将所有坐标为整数的点，相互连接，形成一个所有线段都平行于坐标轴的一系列网格。
+				
+				随后，我们按以下步骤重复操作：
+				
+				首先选取完全包含于$O$的网格将其接受，完全不包含的则排除，剩余的保留下来。
+				
+				接下来，将剩余的网格，全部按坐标的中心分割为$2^d$个相同的小区间。
+				
+				最后，我们把这些小区间组成的一系列网格，重复上面的两步。
+				
+				这个过程一定会构造一个$O = \bigcup_{s \in A} R_s$，其中$R_x$是这些小闭区间。因为，每一个$x \in O$，都一定能找到一个小正方体包含它。
+				
+				显然，$A$一定至多可数，因为整个过程在可数步内完成，这意味着，一定有$\text{Card}A \leqslant \text{Card}\N^d$。
+				
+				唯一性由构造方式是显然的。
+			\end{proof}
 		\subsection{外测度的性质}
 	\section{可测集和Lebesgue测度}
 	\section{可测函数}
