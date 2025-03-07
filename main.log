@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.1.3)  6 MAR 2025 20:57
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.1.3)  7 MAR 2025 23:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1550,12 +1550,21 @@ LaTeX Font Info:    Font shape `TU/LatinModernMath-Regular(3)/m/n' will be
 LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <12> not available
 (Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 
 57.
- [1] [2]) [3]
+ [1] [2] [3]
+
+LaTeX Warning: Command \= invalid in math mode on input line 142.
+
+Missing character: There is no ̄ ("304) in font cmmi12!
+
+LaTeX Warning: Command \= invalid in math mode on input line 144.
+
+Missing character: There is no ̄ ("304) in font cmmi12!
+) [4]
 \openout2 = `extra/extra.aux'.
 
  (./extra/extra.tex
 第二章
-) [4
+) [5
 
 
 
@@ -1569,12 +1578,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 6DCC0E7C9CAB0EB6AC7D4EBF269DEACF;1371.
  ) 
 Here is how much of TeX's memory you used:
- 38618 strings out of 474773
- 843928 string characters out of 5752390
+ 38646 strings out of 474773
+ 845203 string characters out of 5752390
  2024656 words of memory out of 5000000
- 60071 multiletter control sequences out of 15000+600000
- 570351 words of font info for 131 fonts, out of 8000000 for 9000
+ 60097 multiletter control sequences out of 15000+600000
+ 570359 words of font info for 132 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  97i,12n,120p,1263b,2937s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (8 pages).
+Output written on main.pdf (9 pages).

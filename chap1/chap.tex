@@ -115,6 +115,38 @@
 				
 				唯一性由构造方式是显然的。
 			\end{proof}
+			在考虑这些引理后，我们开始计算一些集合的测度。
+			\begin{example}
+				单点的外测度$m_*(a)=0,a\in \R^d$
+			\end{example}
+			\begin{proof}
+				其实，单个点也是一个区间，只不过它的任意方向的上下界都相等。那么，这个点就覆盖自己。
+				
+				单点的体积$|a|=0$，因为外测度非负，所以只能有$m_*(a)=0$
+			\end{proof}
+			\begin{example}
+				闭区间的外测度就是它的体积，即$m_*(R) = |R|$
+			\end{example}
+			值得注意的是，这个命题不能因为闭区间覆盖自己而直接得证，因为与前面的单点不同，我们仅由这一点不能断定没有其他覆盖的体积小于$|R|$
+			\begin{proof}
+				首先，闭区间自己覆盖自己，所以一定有$m_*(R) \leqslant |R|$，我们只需证明相反的不等式。
+				
+				取$R$的一个覆盖$R \subseteq \bigcup_{i=1}^{\infty} R_i$
+				
+				取$\varepsilon >0$，于是对于每一个$R_i$，一定可以找到一个开区间$S_i,R_i \subseteq S_i,|S_i| \leqslant (1+\varepsilon) |R_i|$
+				
+				于是，$\{S_i\}$也构成了$R$的一个覆盖$R\subseteq \bigcup_{i=1}^{\infty} S_i$。
+				
+				因为$R$是闭区间，因此是紧集，于是一定能取一个有限覆盖$R \subseteq \bigcup_{i=1}^{n} S_i$。
+				
+				取$S_i$的闭包，那么也有$R \subseteq \bigcup_{i=1}^{n} \={S_i}$，那么利用前面的引理1.1.2得到：
+				
+				$|R| \leqslant \sum\limits_{i=1}^{n} |\={S_i}|=\sum\limits_{i=1}^{n} |S_i|$
+				
+				于是有$|R| \leqslant (1+\varepsilon)\sum\limits_{i=1}^{n} |R_i| \leqslant (1+\varepsilon)\sum\limits_{i=1}^{\infty} |R_i|$
+				
+				但是$\bigcup_{i=1}^{n} |R_i|$覆盖$R$，$\varepsilon$也是随意选区的，于是有$|R| \leqslant m_*(R)$。那么命题得证。
+			\end{proof}
 		\subsection{外测度的性质}
 	\section{可测集和Lebesgue测度}
 	\section{可测函数}
