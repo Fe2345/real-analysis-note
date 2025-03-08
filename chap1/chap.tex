@@ -125,11 +125,11 @@
 				单点的体积$|a|=0$，因为外测度非负，所以只能有$m_*(a)=0$
 			\end{proof}
 			\begin{example}
-				闭区间的外测度就是它的体积，即$m_*(R) = |R|$
+				闭正方体的外测度就是它的体积，即$m_*(R) = |R|$
 			\end{example}
-			值得注意的是，这个命题不能因为闭区间覆盖自己而直接得证，因为与前面的单点不同，我们仅由这一点不能断定没有其他覆盖的体积小于$|R|$
+			值得注意的是，这个命题不能因为闭正方体覆盖自己而直接得证，因为与前面的单点不同，我们仅由这一点不能断定没有其他覆盖的体积小于$|R|$
 			\begin{proof}
-				首先，闭区间自己覆盖自己，所以一定有$m_*(R) \leqslant |R|$，我们只需证明相反的不等式。
+				首先，闭正方体自己覆盖自己，所以一定有$m_*(R) \leqslant |R|$，我们只需证明相反的不等式。
 				
 				取$R$的一个覆盖$R \subseteq \bigcup_{i=1}^{\infty} R_i$
 				
@@ -137,7 +137,7 @@
 				
 				于是，$\{S_i\}$也构成了$R$的一个覆盖$R\subseteq \bigcup_{i=1}^{\infty} S_i$。
 				
-				因为$R$是闭区间，因此是紧集，于是一定能取一个有限覆盖$R \subseteq \bigcup_{i=1}^{n} S_i$。
+				因为$R$是闭正方体，因此是紧集，于是一定能取一个有限覆盖$R \subseteq \bigcup_{i=1}^{n} S_i$。
 				
 				取$S_i$的闭包，那么也有$R \subseteq \bigcup_{i=1}^{n} \={S_i}$，那么利用前面的引理1.1.2得到：
 				
@@ -147,6 +147,19 @@
 				
 				但是$\bigcup_{i=1}^{n} |R_i|$覆盖$R$，$\varepsilon$也是随意选区的，于是有$|R| \leqslant m_*(R)$。那么命题得证。
 			\end{proof}
+			\begin{example}
+				开正方体的测度$m_*(R)=|\={R}|$
+			\end{example}
+			\begin{proof}
+				首先，$\={R}$覆盖$R$，所以必须有$m_*(R) \leqslant |\={R}|$
+				
+				我们证明相反的不等式。取一个闭正方体$R_0 \subseteq R$，于是一定有$m_*(R_0) \leqslant m_*(R)$，但是$\={R}$也覆盖$R_0$，于是$|R_0| \leqslant m_*(R)$
+				
+				但是，$|R_0|$可以无限接近于$R$，于是一定有$m_*(R) \leqslant |R|$，那么命题得证
+			\end{proof}
+			\begin{example}
+				闭区间
+			\end{example}
 		\subsection{外测度的性质}
 	\section{可测集和Lebesgue测度}
 	\section{可测函数}
