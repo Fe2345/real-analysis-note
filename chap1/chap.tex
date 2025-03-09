@@ -135,20 +135,20 @@
 				
 				取$\varepsilon >0$，于是对于每一个$R_i$，一定可以找到一个开区间$S_i,R_i \subseteq S_i,|S_i| \leqslant (1+\varepsilon) |R_i|$
 				
-				于是，$\{S_i\}$也构成了$R$的一个覆盖$R\subseteq \bigcup_{i=1}^{\infty} S_i$。
+				于是，$\{S_i\}$也构成了$R$的一个覆盖$R\subseteq \bigcup\limits_{i=1}^{\infty} S_i$。
 				
-				因为$R$是闭正方体，因此是紧集，于是一定能取一个有限覆盖$R \subseteq \bigcup_{i=1}^{n} S_i$。
+				因为$R$是闭正方体，因此是紧集，于是一定能取一个有限覆盖$R \subseteq \bigcup\limits_{i=1}^{n} S_i$。
 				
-				取$S_i$的闭包，那么也有$R \subseteq \bigcup_{i=1}^{n} \={S_i}$，那么利用前面的引理1.1.2得到：
+				取$S_i$的闭包，那么也有$R \subseteq \bigcup\limits_{i=1}^{n} \={S_i}$，那么利用前面的引理1.1.2得到：
 				
 				$|R| \leqslant \sum\limits_{i=1}^{n} |\={S_i}|=\sum\limits_{i=1}^{n} |S_i|$
 				
 				于是有$|R| \leqslant (1+\varepsilon)\sum\limits_{i=1}^{n} |R_i| \leqslant (1+\varepsilon)\sum\limits_{i=1}^{\infty} |R_i|$
 				
-				但是$\bigcup_{i=1}^{n} |R_i|$覆盖$R$，$\varepsilon$也是随意选区的，于是有$|R| \leqslant m_*(R)$。那么命题得证。
+				但是$\bigcup\limits_{i=1}^{n} |R_i|$覆盖$R$，$\varepsilon$也是随意选区的，于是有$|R| \leqslant m_*(R)$。那么命题得证。
 			\end{proof}
 			\begin{example}
-				开正方体的测度$m_*(R)=|\={R}|$
+				开正方体的外测度$m_*(R)=|\={R}|$
 			\end{example}
 			\begin{proof}
 				首先，$\={R}$覆盖$R$，所以必须有$m_*(R) \leqslant |\={R}|$
@@ -158,8 +158,45 @@
 				但是，$|R_0|$可以无限接近于$R$，于是一定有$m_*(R) \leqslant |R|$，那么命题得证
 			\end{proof}
 			\begin{example}
-				闭区间
+				区间的外测度$m_*(R) = |\={R}|$
 			\end{example}
+			\begin{proof}
+				首先，显然有$m_*(R) \leqslant |\={R}|$
+				
+				我们接下来证明相反的不等式。作一个$\R^d$中边长为$\frac{1}{k}$的网络，我们取那些包含在$R$中的网格，形成集合$J$，并将那些与$R$相交的网格形成集合$K$
+				
+				那么$R \subseteq \bigcup\limits_{Q \in (J \cup K)} Q$，并且有$\sum\limits_{Q \in J} |Q| \leqslant |R|$ 
+				
+				我们计算$K$中包含了$R$中某一部分的网格体积之和，显然有$O(k^{d-1})$个这样的网格，每一个网格的体积为$O(k^d)$，
+				
+				那么总体积$\sum\limits_{Q \in J} |Q| = O(\frac{1}{k})$
+				
+				于是$\sum\limits_{Q \in (J \cup K)} |Q| \leqslant |R| +O(\frac{1}{k})$，取$k \rightarrow \infty$即有$m_*(R) \leqslant |\={R}|$
+			\end{proof}
+			\begin{example}
+				$m_*(\R^d) = +\infty$
+			\end{example}
+			\begin{proof}
+				显然，一个覆盖如果覆盖了$\R^d$，那么它一定也覆盖了全部的区间，因为任意一个区间都是$\R^d$的子集；
+				
+				但是，区间的体积可以取得任意大，所以只能有$m_*(\R^d)=+\infty$
+			\end{proof}
+			\begin{example}
+				我们如下定义康托尔集：
+				
+				我们先定义$C_0 = [0,1]$
+				
+				随后定义：$C_{n+1}$是$C_{n}$中将每一个$I_x$平分，并去除中间一段的开区间得到的集合。其中$I_x$是包含$x$的最大子区间
+				
+				我们定义：$C = \bigcap\limits_{i=0}^{\infty} C_i$，称为康托尔集
+				
+				$m_*(C)=0$
+			\end{example}
+			\begin{proof}
+				由康托尔集的定义可知：$m_*(C_{n+1})=\frac{2}{3} m_*(C_{n})$
+				
+				所以一定有$m_*(C)=0$
+			\end{proof}
 		\subsection{外测度的性质}
 	\section{可测集和Lebesgue测度}
 	\section{可测函数}

@@ -2,12 +2,12 @@
 \contentsline {section}{\numberline {1.1}外测度}{0}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}区间的体积}{0}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2}外测度的定义}{1}{subsection.1.1.2}%
-\contentsline {subsection}{\numberline {1.1.3}外测度的性质}{4}{subsection.1.1.3}%
-\contentsline {section}{\numberline {1.2}可测集和Lebesgue测度}{4}{section.1.2}%
-\contentsline {section}{\numberline {1.3}可测函数}{4}{section.1.3}%
-\contentsline {chapter}{\numberline {第二章\hspace {.3em}}附录}{5}{chapter.2}%
-\contentsline {section}{\numberline {2.1}原函数初等性的判定方法}{5}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}切比雪夫定理}{5}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}刘维尔定理}{5}{subsection.2.1.2}%
-\contentsline {section}{\numberline {2.2}一些超越积分的特殊解法}{5}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Direchlet积分}{5}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {1.1.3}外测度的性质}{5}{subsection.1.1.3}%
+\contentsline {section}{\numberline {1.2}可测集和Lebesgue测度}{5}{section.1.2}%
+\contentsline {section}{\numberline {1.3}可测函数}{5}{section.1.3}%
+\contentsline {chapter}{\numberline {第二章\hspace {.3em}}附录}{6}{chapter.2}%
+\contentsline {section}{\numberline {2.1}原函数初等性的判定方法}{6}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}切比雪夫定理}{6}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}刘维尔定理}{6}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}一些超越积分的特殊解法}{6}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Direchlet积分}{6}{subsection.2.2.1}%
