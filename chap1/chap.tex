@@ -57,7 +57,7 @@
 			\begin{proof}
 				延展这些区间$R_i$，一定会产生一系列网格，以及${1,\cdots,M}$的一个分割$J_1,\cdots,J_N$，使得
 				
-				$R = \bigcup_{j=1}^{M} \tilde{R_j},R_k = \bigcup_{j \in J_k} \tilde{R_j}$，并且$\tilde{R_j}$几乎不相交
+				$R = \bigcup\limits_{j=1}^{M} \tilde{R_j},R_k = \bigcup\limits_{j \in J_k} \tilde{R_j}$，并且$\tilde{R_j}$几乎不相交
 				
 				实际上，数字$1,\cdots,M$正标明了这些方格中包含$R$的那些方格，$J_k$正是包含了$R_k$的那些序号的集合.
 				
@@ -84,7 +84,7 @@
 				
 				于是，$I_x = (a_x,b_x)$是包含$x$的最大的$O$的子区间，因此有
 				
-				$O = \bigcup_{x \in O} I_x$
+				$O = \bigcup\limits_{x \in O} I_x$
 				
 				我们接下来证明唯一性。只需要证明，不同的这些$I_x$不相交即可。
 				
@@ -109,7 +109,7 @@
 				
 				最后，我们把这些小区间组成的一系列网格，重复上面的两步。
 				
-				这个过程一定会构造一个$O = \bigcup_{s \in A} R_s$，其中$R_x$是这些小闭区间。因为，每一个$x \in O$，都一定能找到一个小正方体包含它。
+				这个过程一定会构造一个$O = \bigcup\limits_{s \in A} R_s$，其中$R_x$是这些小闭区间。因为，每一个$x \in O$，都一定能找到一个小正方体包含它。
 				
 				显然，$A$一定至多可数，因为整个过程在可数步内完成，这意味着，一定有$\text{Card}A \leqslant \text{Card}\N^d$。
 				
@@ -131,7 +131,7 @@
 			\begin{proof}
 				首先，闭正方体自己覆盖自己，所以一定有$m_*(R) \leqslant |R|$，我们只需证明相反的不等式。
 				
-				取$R$的一个覆盖$R \subseteq \bigcup_{i=1}^{\infty} R_i$
+				取$R$的一个覆盖$R \subseteq \bigcup\limits_{i=1}^{\infty} R_i$
 				
 				取$\varepsilon >0$，于是对于每一个$R_i$，一定可以找到一个开区间$S_i,R_i \subseteq S_i,|S_i| \leqslant (1+\varepsilon) |R_i|$
 				
@@ -198,6 +198,55 @@
 				所以一定有$m_*(C)=0$
 			\end{proof}
 		\subsection{外测度的性质}
+		\begin{para}{0}
+			\point{单调性}
+				\begin{proposition}
+					如果$E \subseteq F$，那么$m_*(E) \leqslant m_*(F)$
+				\end{proposition}
+				\begin{proof}
+					$F$的覆盖一定也是$E$的覆盖，所以这个命题显然成立
+				\end{proof}
+			\point{可数可加性}
+				\begin{proposition}
+					如果$E \subseteq \bigcup\limits_{i=1}^{\infty} E_i$，
+					
+					那么有$m_*(E) \leqslant \sum\limits_{i=1}^{\infty} m_*(E_i)$
+				\end{proposition}
+				\begin{proof}
+					首先，如果有一个$m_*(E_j) = \infty$，那么命题显然成立。我们接下来对有限外测度情形考虑。
+					
+					那么，$\forall \varepsilon > 0$，对于任意一个$E_i$，一定能找到一个闭区间覆盖$E_i \subseteq \bigcup\limits_{j=1}^{\infty} R_{i,j}$，其中$R_{i,j}$是闭区间，并且有$\sum\limits_{j=1}^{\infty} |R_{i,j}| \leqslant m_*(E_i) + \frac{\varepsilon}{2^i}$
+					
+					那么，$E \subseteq \bigcup\limits_{i=1,j=1}^{\infty} R_{i,j}$是$E$的一个覆盖。
+					
+					于是有$m_*(E) \leqslant \sum\limits_{i,j=1}^{\infty} |R_{i,j}| = \sum\limits_{i=1}^{\infty} \left(\sum\limits_{j=1}^{\infty} |R_{i,j}|\right)$
+					
+					$\leqslant \sum\limits_{i=1}^{\infty} \left(m_*(E_i) + \frac{\varepsilon}{2^i}\right) = \sum\limits_{i=1}^{\infty} m_*(E_i) + \varepsilon$。
+					
+					于是命题得证。
+				\end{proof}
+			\point{}
+				\begin{proposition}
+					设$E \subseteq R^d$，那么有$m_*(E) = \text{inf }m_*(O)$，其中$O$是开集。
+				\end{proposition}
+				\begin{proof}
+					首先，$m_*(E) \leqslant \text{inf }m_*(O)$显然成立。我们接下来证明相反的不等式
+					
+					$\forall \varepsilon > 0$，取一个闭区间覆盖$E \subseteq \bigcup\limits_{i=1}^{\infty} R_i$，并且$\sum\limits_{i=1}^{\infty} |R_i| \leqslant m_*(E) + \frac{\varepsilon}{2}$
+					
+					对于每一个$R_i$，可以选取一个开区间$R_i^0$，使得$R_i \subseteq R_i^0,|R_i^0| \leqslant |R_i| + \frac{\varepsilon}{2^{i+1}}$
+					
+					那么按照开集的性质，$O = \bigcup\limits_{i=1}^{\infty} R_i^0$也是开集。此时我们利用前面的命题得到：
+					
+					$m_*(O) \leqslant \sum\limits_{i=1}^{\infty} m_*(R_i^0) = \sum\limits_{i=1}^{\infty} |R_i^0|$
+					
+					$\leqslant \sum\limits_{i=1}^{\infty} \left(|R_i| + \frac{\varepsilon}{2^{i+1}}\right)$
+					
+					$=\sum\limits_{i=1}^{\infty} |R_i| + \frac{\varepsilon}{2} \leqslant m_*(E) + \varepsilon$
+					
+					于是我们证明了相反的不等式$m_*(O) \leqslant m_*(E)$，那么命题得证。
+				\end{proof}
+		\end{para}
 	\section{可测集和Lebesgue测度}
 	\section{可测函数}
 \ifx\allfiles\undefined
