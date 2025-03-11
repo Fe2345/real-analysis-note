@@ -198,6 +198,7 @@
 				所以一定有$m_*(C)=0$
 			\end{proof}
 		\subsection{外测度的性质}
+		这一段中我们假设所提及的集合都是可测的。
 		\begin{para}{0}
 			\point{单调性}
 				\begin{proposition}
@@ -246,8 +247,54 @@
 					
 					于是我们证明了相反的不等式$m_*(O) \leqslant m_*(E)$，那么命题得证。
 				\end{proof}
+			\point{}
+				\begin{proposition}
+					如果$E = E_1 \cup E_2$，$d(E_1,E_2) >  0$
+					
+					那么$m_*(E) = m_*(E_1)+m_*(E_2)$
+				\end{proposition}
+				\begin{proof}
+					首先，一定有$m_*(E) \leqslant m_*(E_1) + m_*(E_2)$，我们接下来证明相反的不等式。
+					
+					首先，一定有$\delta,d(E_1,E_2) > \delta > 0$
+					
+					那么我们选取一个$\varepsilon >0$和一个闭区间覆盖$E \subseteq \bigcup\limits_{i=1}^{\infty} R_i$，使得$\sum\limits_{i=1}^{\infty} |R_i| \leqslant m_*(E)+\varepsilon$
+					
+					我们不失一般性地认为，$R_i$在各个方向的边长小于$\delta$，因为我们可以进一步分割这些闭区间来达到这一点。
+					
+					那么，每一个$R_i$至多与$E_1,E_2$之一相交。于是，可以将$\N$分割为$\N = J_1 \cup J_2$，分别为与$E_1$和$E_2$相交的闭区间的下标的集合。
+					
+					也就是有：$E_1 \subseteq \bigcup\limits_{i \in J_1} R_i,E_2 \subseteq \bigcup\limits_{j \in J_2} R_j$
+					
+					于是，$m_*(E_1)+m_*(E_2) \leqslant \sum\limits_{i\in J_1} |R_i|+\sum\limits_{j\in J_2} |R_j|$
+					
+					$\leqslant \sum\limits_{i=1}^{\infty} |R_i| \leqslant m_*(E)+\varepsilon$
+					
+					因为$\varepsilon$是任意选取的，那么$m_*(E_1)+m_*(E_2) \leqslant m_*(E)$，于是命题得证。
+				\end{proof}
+				\begin{proposition}
+					如果$E = \bigcup\limits_{i=1}^{\infty} R_i$，其中$R_i$是几乎不相交的闭区间。
+					
+					那么$m_*(E) = \sum\limits_{i=1}^{\infty} |R_i|$
+				\end{proposition}
+				\begin{proof}
+					对于每一个$R_i$，选取一个闭区间$Q_i \subseteq R_i,|R_i| \leqslant |Q_i| + \frac{\varepsilon}{2^i}$
+					
+					那么$Q_i$互不相交，于是对于每一个$N \in \N_+$，有：
+					
+					$m_*(\bigcup\limits_{i=1}^{N} Q_i)=\sum\limits_{i=1}^{N} |Q_i| \geqslant \sum\limits_{i=1}^{N} \left(|R_i| - \frac{\varepsilon}{2^i}\right)$
+					
+					但是，$\bigcup\limits_{i=1}^{N} Q_i \subseteq E$，于是有$m_*(E) \geqslant \sum\limits_{i=1}^{N} |R_i| - \varepsilon$
+					
+					取$N \textrightarrow \infty$，那么$\sum\limits_{i=1}^{\infty} |R_i| \leqslant  m_*(E)+\varepsilon$，那么命题得证。
+				\end{proof}
 		\end{para}
 	\section{可测集和Lebesgue测度}
+		\begin{defn}{勒贝格可测集}{}
+			设$E \subseteq R^d$，如果$\forall \varepsilon > 0,\exists$开集$O$，$O \subset E,m_*(O-E) < \varepsilon$
+			
+			那么我们称$E$勒贝格可测，并称$E$的勒贝格测度$m(E)=m_*(E)$
+		\end{defn}
 	\section{可测函数}
 \ifx\allfiles\undefined
 \end{document}
